@@ -37,3 +37,8 @@ Install contentfull api
 ```bash
 npm install contentful
 ```
+
+Install rich-text-react-renderer
+```bash
+npm install @contentful/rich-text-react-renderer
+```
