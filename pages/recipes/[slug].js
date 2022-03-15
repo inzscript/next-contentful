@@ -62,8 +62,10 @@ export default function RecipeDetails({ recipe }) {
       <div className="banner">
         <Image
           src={'https:' + featuredImage.fields.file.url}
-          width={featuredImage.fields.file.details.image.width}
-          height={featuredImage.fields.file.details.image.height}
+          // width={featuredImage.fields.file.details.image.width}
+          // height={featuredImage.fields.file.details.image.height}
+          layout="fill"
+          objectFit='cover'
         />
         <h2>{ title }</h2>
       </div>
@@ -86,19 +88,24 @@ export default function RecipeDetails({ recipe }) {
         h2,h3 {
           text-transform: uppercase;
         }
+        .banner {
+          position: relative;
+          width: 1200px;
+          height: 400px;
+        }
         .banner h2 {
           margin: 0;
           background: #fff;
           display: inline-block;
           padding: 20px;
           position: relative;
-          top: -60px;
+          top: 340px;
           left: -10px;
           transform: rotateZ(-1deg);
           box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
         }
         .info p {
-          margin: 0;
+          margin-top: 2.7em;
         }
         .info span::after {
           content: ", ";

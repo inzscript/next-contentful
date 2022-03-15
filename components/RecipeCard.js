@@ -10,8 +10,10 @@ export default function Recipecard({ recipe }) {
                 {/* image - thunb */}
                 <Image 
                     src={'https:' +  thumbnail.fields.file.url}
-                    width={thumbnail.fields.file.details.image.width}
-                    height={thumbnail.fields.file.details.image.height}
+                    // width={thumbnail.fields.file.details.image.width}
+                    // height={thumbnail.fields.file.details.image.height}
+                    layout="fill"
+                    objectfit="cover"
                 />
             </div>
             <div className="content">
@@ -57,6 +59,11 @@ export default function Recipecard({ recipe }) {
                 background: #f01b29;
                 padding: 16px 24px;
                 text-decoration: none;
+                }
+                .featured {
+                position: relative;
+                width: 500px;
+                height: 300px;
                 }
             `}</style>
 
