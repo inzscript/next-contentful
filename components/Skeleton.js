@@ -29,7 +29,7 @@ export default function Skeleton(props) {
                     padding: 15px 0;
                     max-width: 500px;
                 }
-                s-content {
+                .s-content {
                     padding: 8px 0;
                     max-width: 1000px;
                 }

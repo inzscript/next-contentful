@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
     }
   })
 
-  // get slug paths for all recipes and set fallback if not found
+  // get slug paths for all recipes and set fallback for the recipe component
   return {
     paths,
     fallback: true
@@ -33,6 +33,16 @@ export async function getStaticProps({ params }) {
     'fields.slug': params.slug
   })
 
+  // if recipe doesn't exist redirect
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+
   return {
     props: { recipe: items[0] },
     revalidate: 1
@@ -42,7 +52,7 @@ export async function getStaticProps({ params }) {
 
 export default function RecipeDetails({ recipe }) {
   console.log(recipe)
-  // destructure data
+  // Check if new data is available from the props if not wait for data with skeleton layout
   if(!recipe) return <Skeleton />
 
   const { featuredImage, title, cookingTime, ingredients, method } = recipe.fields
